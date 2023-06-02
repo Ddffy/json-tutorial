@@ -1,0 +1,126 @@
+        -:    0:Source:C:/Users/lcm/CLionProjects/untitled1/main.cpp
+        -:    0:Graph:C:\Users\lcm\CLionProjects\untitled1\cmake-build-debug-\CMakeFiles\untitled1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\lcm\CLionProjects\untitled1\cmake-build-debug-\CMakeFiles\untitled1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include<iostream>
+        -:    2:using namespace std;
+        -:    3:const int N=20;
+        -:    4:int gaoya[N],zy[N],qin[N],res,st[N],tem1,tem2,tem3;
+function _Z1rii called 441183771 returned 100% blocks executed 92%
+441183771:    5:void r(int k,int end)
+        -:    6:{
+441183771:    7:    if(k==11)res=min(res,end);
+441183771:    7-block  0
+branch  0 taken 336860967 (fallthrough)
+branch  1 taken 104322804
+336860967:    7-block  1
+call    2 returned 336860967
+        -:    8:    else
+        -:    9:   {
+1460519192:   10:    for(int i=1;i<=13;i++)
+104322804:   10-block  0
+1356196388:   10-block  1
+1460519192:   10-block  2
+branch  0 taken 1356196397
+branch  1 taken 104322795 (fallthrough)
+        -:   11:    {
+1356196397:   12:        if(!st[i])
+1356196397:   12-block  0
+branch  0 taken 441183770 (fallthrough)
+branch  1 taken 915012627
+        -:   13:        {
+441183770:   14:            int gy=0,zyy=0,q=0;
+441183770:   15:           if(gaoya[i]>gaoya[0]){gy=(gaoya[i]-gaoya[0])/100*4;
+441183770:   15-block  0
+branch  0 taken 441183088 (fallthrough)
+branch  1 taken 682
+441183088:   16:             tem1=gaoya[0];
+441183088:   16-block  0
+        -:   17:           }
+        -:   18:
+441183770:   19:            if(zy[i]>zy[0]) {zyy=(zy[i]-zy[0])/100*2;
+441183770:   19-block  0
+branch  0 taken 438782683 (fallthrough)
+branch  1 taken 2401087
+438782683:   20:              tem2=zy[0];
+438782683:   20-block  0
+        -:   21:            }
+        -:   22:
+441183770:   23:        if(qin[i]>qin[0])
+441183770:   23-block  0
+branch  0 taken 441183762 (fallthrough)
+branch  1 taken 8
+441183762:   24:        {  int q=(qin[i]-qin[0])/100*24;
+441183762:   25:        tem3=qin[0];
+441183762:   25-block  0
+        -:   26:        }
+        -:   27:
+441183770:   28:           int t=max(gy,zyy);
+441183770:   28-block  0
+call    0 returned 441183770
+441183770:   29:           t=max(zyy,q);
+call    0 returned 441183770
+441183770:   30:            gaoya[0]=t*(100/4)+gaoya[0]-gaoya[i];
+441183770:   31:            if(gaoya[0]>100)gaoya[0]=100;
+branch  0 taken 2468 (fallthrough)
+branch  1 taken 441181302
+     2468:   31-block  0
+441183770:   32:            zy[0]=t*(100/2)+zy[0]-zy[i];
+441183770*:   33:            if(zy[0]>100)zy[0]=100;
+441183770:   33-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 441183770
+    %%%%%:   33-block  1
+441183770:   34:            qin[0]=t*(100/24)+qin[0]-qin[i];
+441183770*:   35:           if(qin[0]>100)qin[0]=100;
+441183770:   35-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 441183770
+    %%%%%:   35-block  1
+441183770:   36:            st[i]=true;
+        -:   37:
+441183770:   38:            r(k+1,end+t);
+441183770:   38-block  0
+call    0 returned 441183761
+branch  1 taken 441183761 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   39:
+        -:   40:
+441183761:   41:            gaoya[0]=tem1;
+441183761:   42:            zy[0]=tem2;
+441183761:   43:            qin[0]=tem3;
+441183761:   44:            st[i]=false;
+441183761:   44-block  0
+        -:   45:        }
+        -:   46:    }
+        -:   47:   }
+        -:   48:
+        -:   49:
+441183762:   50:}
+441183762:   50-block  0
+function main called 1 returned 0% blocks executed 40%
+        1:   51:int main()
+        -:   52:{
+        1:   53:    zy[1]=19;
+        1:   54:    zy[2]=38,zy[3]=45,gaoya[4]=25,zy[4]=17;
+        1:   55:    gaoya[5]=39,zy[5]=19;
+        -:   56:
+        1:   57:    gaoya[6]=38;
+        1:   58:    gaoya[7]=46;
+        1:   59:    gaoya[8]=40;
+        -:   60:
+        1:   61:    gaoya[9]=48,qin[9]=35;
+        1:   62:    qin[10]=15;
+        -:   63:
+        1:   64:    gaoya[11]=29,qin[11]=39;
+        1:   65:    gaoya[12]=45,qin[12]=30;
+        1:   66:    gaoya[13]=26,qin[13]=70;
+        1:   67:  r(1,0);
+        1:   67-block  0
+call    0 returned 0
+    #####:   68:  cout<<res<<endl;
+call    0 never executed
+call    1 never executed
+    #####:   69:   return 0;
+        -:   70:
+        -:   71:}
